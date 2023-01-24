@@ -2,7 +2,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config()
-const MyFruit = require('./models/fruits')
+const MyFruit = require('./models/fruit')
+const MyVeggie = require('./models/veggie')
 const app = express();
 
 
