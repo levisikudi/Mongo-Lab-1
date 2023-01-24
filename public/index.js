@@ -1,4 +1,5 @@
 let submitButton = document.getElementById('submit-button');
+let deletebutton = document.getElementById('delete')
 
 submitButton.addEventListener('click', async () => {
     
@@ -27,7 +28,7 @@ submitButton.addEventListener('click', async () => {
     
     })
     let uploadStatusTag = document.getElementById('upload-status')
-    
+
     if(response.status === 200){
         console.log(response);
         console.log("upload complete");
@@ -41,3 +42,9 @@ submitButton.addEventListener('click', async () => {
     }
 })
 
+deletebutton.addEventListener('click', async () => {
+    let response = await fetch ('http://localhost:4000/delete_nameless_data', {
+        method : 'delete',
+    })
+    console.log(response);
+})
