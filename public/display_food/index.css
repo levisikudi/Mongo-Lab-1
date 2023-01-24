@@ -1,0 +1,14 @@
+h1{
+    text-align: center;
+    color: white;
+    background-color: brown;
+    padding: .5rem;
+}
+
+p{
+    margin: 1px;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border: 2px solid black;
+}
