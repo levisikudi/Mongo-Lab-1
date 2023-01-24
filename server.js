@@ -49,6 +49,14 @@ app.delete('/delete_nameless_data', async (req, res) =>{
     res.send({data : `deleted ${response.length} items`})
 })
 
+
+app.get('/get_food_data', async (req, res) =>{
+    // get data from database
+    let response = await MyFruit.find({});
+    console.log(response);
+    //send to front end
+    res.json(response)
+})
 // Create the following routes in server.js
 // '/create_veggie' - this route will get information from the front end and create a new Veggie in the collection
 app.get('/create_veggie', (req, res) =>{

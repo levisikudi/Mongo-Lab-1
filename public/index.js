@@ -1,5 +1,6 @@
 let submitButton = document.getElementById('submit-button');
 let deletebutton = document.getElementById('delete')
+let displayPageButton = document.getElementById('display-page-button')
 
 submitButton.addEventListener('click', async () => {
     
@@ -47,4 +48,8 @@ deletebutton.addEventListener('click', async () => {
         method : 'delete',
     })
     console.log(response);
+})
+
+displayPageButton.addEventListener('click', async () =>{
+    window.location.href = './display_food'
 })
