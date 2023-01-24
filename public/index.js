@@ -18,7 +18,7 @@ submitButton.addEventListener('click', async () => {
     }
     console.log(JSON.stringify(fruit));
 
-    fetch('http://localhost:5000/create_fruit', {
+    let response = await fetch('http://localhost:4000/create_fruit', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
@@ -26,6 +26,18 @@ submitButton.addEventListener('click', async () => {
         body: JSON.stringify(fruit)
     
     })
-
+    let uploadStatusTag = document.getElementById('upload-status')
+    
+    if(response.status === 200){
+        console.log(response);
+        console.log("upload complete");
+        uploadStatusTag.textContent = "Upload Completed"
+        uploadStatusTag.style.color = 'green'
+    } else{
+        console.log(response);
+        console.log("upload failed");
+        uploadStatusTag.textContent = "Upload failed"
+        uploadStatusTag.style.color = 'red'
+    }
 })
 

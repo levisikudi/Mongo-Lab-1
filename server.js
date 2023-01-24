@@ -41,6 +41,20 @@ app.post('/create_fruit', async (req, res) =>{
     res.send(returnedValue);
 })
 
+// Create the following routes in server.js
+// '/create_veggie' - this route will get information from the front end and create a new Veggie in the collection
+app.get('/create_veggie', (req, res) =>{
+    
+})
+
+
+// '/veggies' - this route will get all Veggie objects from the database and send them to the front end
+// '/veggie/:veggieName' - this route will take the veggieName and get that specific veggie from the database and send it to the front end to be displayed
+
+
+
+
+
 app.get('/get_data', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
