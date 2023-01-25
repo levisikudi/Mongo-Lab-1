@@ -14,5 +14,13 @@ const getSingleVeggie = async () =>{
     let finalData = await response.json()
 
     console.log(finalData);
+
+    
+    let veggieName = document.getElementById('veggie-name')
+    veggieName.textContent = finalData.name
+    
+
 }
 getSingleVeggie()
+// display content on html
+

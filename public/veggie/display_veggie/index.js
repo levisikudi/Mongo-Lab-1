@@ -16,17 +16,12 @@ const getData = async () =>{
                 pTag.style.backgroundColor = "red"
             }
 
-
-
-
             pTag.addEventListener('click', (event) =>{
                 console.log(event.target);
                 console.log(event.target.id);
                 window.location.href = `../single_veggie?veggieId=${event.target.id}`
             })
         });
-    })
-
-    
+    })    
 }
 getData()

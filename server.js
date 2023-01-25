@@ -26,13 +26,14 @@ mongoose.connection.once('open', ()=> {
 
 app.post('/create_fruit', async (req, res) =>{
     
-    const {nameString: name, colorString: color, ageNumber: age, readyBool: readyToEat} = req.body;
+    const {nameString: name, colorString: color, ageNumber: age, readyBool: readyToEat, image: image} = req.body;
 
     let returnedValue = await MyFruit.create({
         name,
         color,
         age,
-        readyToEat
+        readyToEat,
+        image
     })
     console.log(returnedValue);
     if (returnedValue) {
