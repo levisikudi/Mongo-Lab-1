@@ -85,20 +85,13 @@ app.get('/veggies', async (req, res) =>{
     res.json(response)
 })
 // '/veggie/:veggieName' - this route will take the veggieName and get that specific veggie from the database and send it to the front end to be displayed
-app.get('veggie/:veggieName', (req, res) =>{
+app.get('/veggie/:veggieName', async (req, res) =>{
+    let id = req.params.veggieName
 
+    let response = await MyVeggie.findById(id)
+    res.send(response)
 })
 
-
-
-
-app.get('/get_data', (req, res) => {
-    res.setHeader('Content-Type', 'application/json');
-
-    console.log("request received at /get_data");
-    console.log(process.env.MONGOPASSWORD);
-    res.json({data: "Response from server"})
-})
 
 
 app.listen(4000, () => {
