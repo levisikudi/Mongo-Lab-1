@@ -26,14 +26,13 @@ mongoose.connection.once('open', ()=> {
 
 app.post('/create_fruit', async (req, res) =>{
     
-    const {nameString: name, colorString: color, ageNumber: age, readyBool: readyToEat, image: image} = req.body;
+    const {nameString: name, colorString: color, ageNumber: age, readyBool: readyToEat} = req.body;
 
     let returnedValue = await MyFruit.create({
         name,
         color,
         age,
-        readyToEat,
-        image
+        readyToEat
     })
     console.log(returnedValue);
     if (returnedValue) {
@@ -61,13 +60,14 @@ app.get('/get_food_data', async (req, res) =>{
 // Create the following routes in server.js
 // '/create_veggie' - this route will get information from the front end and create a new Veggie in the collection
 app.post('/create_veggie', async (req, res) =>{
-    const {nameString: name, colorString: color, ageNumber: age, readyBool: readyToEat} = req.body;
+    const {nameString: name, colorString: color, ageNumber: age, readyBool: readyToEat, image: image} = req.body;
 
     let returnedValue = await MyVeggie.create({
         name,
         color,
         age,
-        readyToEat
+        readyToEat,
+        image
     })
     console.log(returnedValue);
     if (returnedValue) {

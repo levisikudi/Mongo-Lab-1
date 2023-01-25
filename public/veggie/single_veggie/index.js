@@ -15,9 +15,11 @@ const getSingleVeggie = async () =>{
 
     console.log(finalData);
 
-    
+    let veggieImage = document.getElementById('veggie-image')
     let veggieName = document.getElementById('veggie-name')
     veggieName.textContent = finalData.name
+    veggieImage.src = finalData.image
+
     
 
 }

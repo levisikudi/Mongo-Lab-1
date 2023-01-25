@@ -15,7 +15,7 @@ submitButton.addEventListener('click', async () => {
     let colorString = document.getElementById('color-input').value;
     let ageNumber = +document.getElementById('age-input').value;
     let readyBool = document.getElementById('ready-bool').value === "true" ? true : false;
-    let image = document.getElementById('image-input')
+    let image = document.getElementById('image-input').value;
 
 
 
