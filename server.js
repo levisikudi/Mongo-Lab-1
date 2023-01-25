@@ -77,8 +77,12 @@ app.post('/create_veggie', async (req, res) =>{
 
 // '/veggies' - this route will get all Veggie objects from the database and send them to the front end
 
-app.get('/vegies', (req, res) =>{
-
+app.get('/veggies', async (req, res) =>{
+    // get data from database
+    let response = await MyVeggie.find({});
+    console.log(response);
+    //send to front end
+    res.json(response)
 })
 // '/veggie/:veggieName' - this route will take the veggieName and get that specific veggie from the database and send it to the front end to be displayed
 app.get('veggie/:veggieName', (req, res) =>{

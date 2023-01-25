@@ -1,7 +1,7 @@
 let veggiesTab = document.getElementById('veggies-tab')
 let fruitsTab = document.getElementById('fruits-tab')
 let submitButton = document.getElementById('submit-button');
-
+let displayVeggie = document.getElementById('display-veggies')
 
 
 fruitsTab.addEventListener('click', async () =>{
@@ -47,4 +47,8 @@ submitButton.addEventListener('click', async () => {
         uploadStatusTag.textContent = "Upload failed"
         uploadStatusTag.style.color = 'red'
     }
+})
+
+displayVeggie.addEventListener('click', async () =>{
+    window.location.href = './display_veggie'
 })
