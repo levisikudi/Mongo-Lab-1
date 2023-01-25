@@ -12,7 +12,7 @@
 
 #navbar{
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 10px;
     background-color: brown;
 }

@@ -1,8 +1,12 @@
-let submitButton = document.getElementById('submit-button');
-let deletebutton = document.getElementById('delete')
-let displayPageButton = document.getElementById('display-page-button')
 let veggiesTab = document.getElementById('veggies-tab')
 let fruitsTab = document.getElementById('fruits-tab')
+let submitButton = document.getElementById('submit-button');
+
+
+
+fruitsTab.addEventListener('click', async () =>{
+    window.location.href = '../index.html'
+})
 
 submitButton.addEventListener('click', async () => {
     
@@ -14,20 +18,20 @@ submitButton.addEventListener('click', async () => {
 
 
 
-    const fruit = {
+    const veggie = {
         nameString,
         colorString,
         ageNumber,
         readyBool
     }
-    console.log(JSON.stringify(fruit));
+    console.log(JSON.stringify(veggie));
 
-    let response = await fetch('http://localhost:4000/create_fruit', {
+    let response = await fetch('http://localhost:4000/create_veggie', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(fruit)
+        body: JSON.stringify(veggie)
     
     })
     let uploadStatusTag = document.getElementById('upload-status')
@@ -43,20 +47,4 @@ submitButton.addEventListener('click', async () => {
         uploadStatusTag.textContent = "Upload failed"
         uploadStatusTag.style.color = 'red'
     }
-})
-
-deletebutton.addEventListener('click', async () => {
-    let response = await fetch ('http://localhost:4000/delete_nameless_data', {
-        method : 'delete',
-    })
-    console.log(response);
-})
-
-displayPageButton.addEventListener('click', async () =>{
-    window.location.href = './display_food'
-})
-
-veggiesTab.addEventListener('click', async () =>{
-    window.location.href = './veggie'
-    console.log('Veggies ahoy');
 })
