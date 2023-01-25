@@ -12,3 +12,6 @@ p{
     padding: 1rem;
     border: 2px solid black;
 }
+#back-to-form-btn{
+    display: block;
+}

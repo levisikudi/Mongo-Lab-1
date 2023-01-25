@@ -25,3 +25,8 @@ const getData = async () =>{
     })    
 }
 getData()
+
+let backButton = document.getElementById('back-to-form-btn')
+backButton.addEventListener('click', ()=>{
+    window.location.href = '../index.html'
+})

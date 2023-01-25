@@ -24,5 +24,11 @@ const getSingleVeggie = async () =>{
 
 }
 getSingleVeggie()
-// display content on html
+
+
+let backButton = document.getElementById('back-to-veggies-btn')
+backButton.addEventListener('click', ()=>{
+    window.location.href = '../display_veggie'
+})
+
 
